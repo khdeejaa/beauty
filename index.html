@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background:url('https://i.pinimg.com/736x/54/a9/25/54a925a2b7d0324e7bbbfc8284b0fdea.jpg') no-repeat center center fixed;
+            background-size:cover;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+         /* Header styling */
+         header {
+            background-color: #b47c7c;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .top-bar .contact-info {
+            font-size: 14px;
+        }
+
+        header .top-bar h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }    
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .search-container, .filters-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters-container select {
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-card a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beauty Finder</h1>
+        <nav>
+            <ul>
+                <li><a href="wishlist.html">WISHLIST</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="#" onclick="window.close()">EXIT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to Beauty Finder</h2>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+
+        <div class="filters-container">
+            <select id="brandFilter">
+                <option value="">All Brands</option>
+                <option value="maybelline">Maybelline</option>
+                <option value="dior">Dior</option>
+                <option value="covergirl">Covergirl</option>
+                <option value="revlon">Revlon</option>
+                <option value="nyx">NYX</option>
+                <option value="clinique">Clinique</option>
+                <option value="smashbox">Smashbox</option>
+                <option value="l'oreal">L'Oreal</option>
+                <option value="benefit">Benefit</option>
+                <option value="milani">Milani</option>
+                <option value="essie">Essie</option>
+            </select>
+
+            <select id="priceFilter">
+                <option value="">All Prices</option>
+                <option value="0-10">Below $10</option>
+                <option value="10-20">$10 - $20</option>
+                <option value="20-100">Above $20</option>
+            </select>
+        </div>
+
+        <section id="results">
+            <h2>All Results</h2>
+            <div id="products" class="products-grid"></div>
+        </section>
+    </main>
+    <script src="renderer.js"></script>
+</body>
+</html>
